@@ -1,16 +1,17 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 // import type {PropsWithChildren} from 'react';
-import {SafeAreaView} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import Navigator from './src/app/Navigator';
+import {SafeAreaProvider} from 'react-native-safe-area-context';
 
 function App(): JSX.Element {
-  return <SafeAreaView></SafeAreaView>;
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <Navigator />
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
 }
 
 export default App;
