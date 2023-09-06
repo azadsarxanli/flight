@@ -19,12 +19,13 @@ export const BookFlightScreenContainer = () => {
     dates: [],
   });
   const [direction, setDirection] = useState({
-    from: 'from',
-    to: 'to',
+    from: '',
+    to: '',
   });
   const isSameDirection = useMemo(() => {
-    return direction.from === direction.to;
+    return direction.from === direction.to && direction.from !== '';
   }, [direction]);
+
   const uniqueFromAirportNameValues = useMemo(() => {
     return mockData
       .filter(
