@@ -116,7 +116,7 @@ false way of doing this
         flex: 1,
         paddingTop: 45,
       }}>
-      <Tab value={index} onChange={setIndex} dense>
+      <Tab value={index} onChange={setIndex}>
         <Tab.Item>One way</Tab.Item>
         <Tab.Item>Round</Tab.Item>
       </Tab>
