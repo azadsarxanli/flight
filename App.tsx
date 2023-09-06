@@ -1,15 +1,18 @@
 import React from 'react';
 // import type {PropsWithChildren} from 'react';
-import {NavigationContainer} from '@react-navigation/native';
-import Navigator from './src/app/Navigator';
+import Navigator from './src/app/components/Navigator';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import {NavigationProvider} from './src/app/NavigationProvider';
+import {ThemeProvider} from './src/app/ThemeProvider';
 
 function App(): JSX.Element {
   return (
     <SafeAreaProvider>
-      <NavigationContainer>
-        <Navigator />
-      </NavigationContainer>
+      <ThemeProvider>
+        <NavigationProvider>
+          <Navigator />
+        </NavigationProvider>
+      </ThemeProvider>
     </SafeAreaProvider>
   );
 }

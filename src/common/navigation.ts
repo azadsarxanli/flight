@@ -1,12 +1,12 @@
-import {GraphQlError} from './types';
+import {Schema} from '../screens/FlightListScreenContainer';
+import {SelectedDates} from '../types/selectedDates';
 
 export type RootStackParamList = {
-  AppOutdated: undefined;
   HomeNavigation: undefined;
-  ProductModal: undefined;
-  Reader: {bookId: string};
-  Player: {id: string};
-  Onboarding: {error?: GraphQlError};
+  Screen: undefined;
+  Screen1: {bookId: string};
+  Screen2: {id: string};
+  Onboarding: {error?: Error};
   RegisterNewUser: undefined;
   Registration: undefined;
   WelcomeNewUser: undefined;
@@ -23,17 +23,8 @@ export type RootStackParamList = {
 
 export type HomeStackParamList = {
   Home: undefined;
-  Product: {id: string};
-};
-
-export type LibraryStackParamList = {
-  Library: undefined;
-  Product: {id: string};
-};
-
-export type SearchStackParamList = {
-  Search: undefined;
-  Product: {id: string};
+  BookFlights: undefined;
+  FlightListScreenContainer: {filteredData: Schema[]};
 };
 
 export type HomeNavParamList = {
@@ -45,8 +36,6 @@ export type HomeNavParamList = {
 
 export type CombinedNavParamList = RootStackParamList &
   HomeNavParamList &
-  HomeStackParamList &
-  LibraryStackParamList &
-  SearchStackParamList;
+  HomeStackParamList;
 
 export type Screen = keyof CombinedNavParamList;
